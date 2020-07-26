@@ -15,7 +15,7 @@ class Money
         $this->setAmount($amount);
     }
 
-    public function add(Money $amount):float
+    public function add(self $amount):float
     {
         if($this->currency->getIsoCode() === $amount->getCurrency()->getIsoCode()){
             return $this->amount + $amount->getAmount();
@@ -24,7 +24,7 @@ class Money
         throw new \InvalidArgumentException();
     }
 
-    public function equals(Money $amount):bool
+    public function equals(self $amount):bool
     {
         return $this->amount === $amount->getAmount() &&
                $this->currency->getIsoCode() === $amount->getCurrency()->getIsoCode();
