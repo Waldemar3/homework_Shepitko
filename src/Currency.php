@@ -13,7 +13,7 @@ class Currency
         $this->setIsoCode($currency);
     }
 
-    public function equals(Currency $currency):bool
+    public function equals(self $currency):bool
     {
         return $this->isoCode === $currency->getIsoCode();
     }
